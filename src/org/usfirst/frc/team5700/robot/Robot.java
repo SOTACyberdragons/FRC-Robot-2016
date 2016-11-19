@@ -22,8 +22,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 public class Robot extends IterativeRobot {
 	
 	//Git comment
-	//more comments on comment branch
-	//Can repo team member (not owner) commit to master?
+
 
 	public static DefenseArms defenseArms;
 	public static DriveTrain drivetrain;
