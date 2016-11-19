@@ -22,7 +22,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 public class Robot extends IterativeRobot {
 	
 	//Git comment
-	//more comments on comment branch
+	//Replaced comment -- Dmitry
 
 	public static DefenseArms defenseArms;
 	public static DriveTrain drivetrain;
