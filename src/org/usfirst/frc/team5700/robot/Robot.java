@@ -20,9 +20,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  * directory.
  */
 public class Robot extends IterativeRobot {
-	
-	//Git comment
-	//Replaced comment -- Dmitry
 
 	public static DefenseArms defenseArms;
 	public static DriveTrain drivetrain;
