@@ -1,4 +1,7 @@
 *.class
+sysProps.xml
+.DS_Store
+*.swp
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

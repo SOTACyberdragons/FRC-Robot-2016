@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -53,6 +54,7 @@ public class Robot extends IterativeRobot {
 		scaling = new Scaling();
 		intake = new Intake();
 		oi = new OI();
+		SmartDashboard.putNumber("Gyro", 0);
 
 	}
 
@@ -116,6 +118,8 @@ public class Robot extends IterativeRobot {
 	 */
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		
+		SmartDashboard.putNumber("Gyro value", drivetrain.getHeading());
 	}
 
 	/**
