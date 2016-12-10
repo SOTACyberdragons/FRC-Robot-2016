@@ -4,8 +4,11 @@ package org.usfirst.frc.team5700.robot.subsystems;
 
 import org.usfirst.frc.team5700.robot.RobotMap;
 import org.usfirst.frc.team5700.robot.commands.TankDriveWithJoysticks;
+
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -19,6 +22,8 @@ public class DriveTrain extends Subsystem {
 	private SpeedController front_left_motor, back_left_motor,
 	front_right_motor, back_right_motor;
 	
+	private ADXRS450_Gyro gyro;
+	
 	public DriveTrain() {
 		super();
 		front_left_motor = new Spark(RobotMap.FRONT_LEFT_DRIVE_MOTOR);
@@ -27,6 +32,10 @@ public class DriveTrain extends Subsystem {
 		back_right_motor = new Spark(RobotMap.BACK_RIGHT_DRIVE_MOTOR);
 		drive = new RobotDrive(front_left_motor, back_left_motor,
 							   front_right_motor, back_right_motor);
+		
+		gyro = new ADXRS450_Gyro(SPI.Port.kOnboardCS0);
+		gyro.reset();
+		gyro.calibrate();
 	}
 
 	
@@ -49,6 +58,10 @@ public class DriveTrain extends Subsystem {
 	
 	public void drive(double left, double right) {
 		drive.tankDrive(left, right);
+	}
+	
+	public double getHeading() {
+		return gyro.getAngle();
 	}
 
     public void initDefaultCommand() {
