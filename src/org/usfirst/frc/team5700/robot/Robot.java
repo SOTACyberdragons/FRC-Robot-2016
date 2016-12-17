@@ -54,8 +54,8 @@ public class Robot extends IterativeRobot {
 		scaling = new Scaling();
 		intake = new Intake();
 		oi = new OI();
-		SmartDashboard.putNumber("Gyro", 0);
-
+		SmartDashboard.putNumber("Foo", 12345);
+		SmartDashboard.putNumber("Joystick", 0);
 	}
 
 	/**
@@ -120,6 +120,7 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 		
 		SmartDashboard.putNumber("Gyro value", drivetrain.getHeading());
+		SmartDashboard.putNumber("Joystick", oi.getLeftStick().getY());
 	}
 
 	/**

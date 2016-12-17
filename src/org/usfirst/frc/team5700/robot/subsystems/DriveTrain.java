@@ -34,8 +34,12 @@ public class DriveTrain extends Subsystem {
 							   front_right_motor, back_right_motor);
 		
 		gyro = new ADXRS450_Gyro(SPI.Port.kOnboardCS0);
-		gyro.reset();
 		gyro.calibrate();
+		System.out.println("Calibrating gyro.");
+		gyro.reset();
+		System.out.println("Reset gyro.");
+		System.out.println("Gyro rate: " + gyro.getRate());
+		
 	}
 
 	
